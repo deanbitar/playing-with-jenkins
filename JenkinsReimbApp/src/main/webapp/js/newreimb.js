@@ -9,11 +9,11 @@ if(user){
 	user = JSON.parse(user);
 	console.log(user);
 	if(user.role != 1){
-		window.location.replace("./index.html");
+		window.location.replace("../index.html");
 	}
 }
 else{
-	window.location.replace("./index.html");
+	window.location.replace("../index.html");
 }
 
 let lblBarMain = document.getElementById("lblBarMain");
@@ -41,7 +41,7 @@ function clickedSubmit(){
 				response = JSON.parse(response);
 				
 				if(response.status == "ok")
-					window.location.replace("./pages/employee.html");
+					window.location.replace("./employee.html");
 				else {
 					alert("Something went wrong");
 				}
@@ -68,10 +68,10 @@ function clickedSubmit(){
 }
 
 function clickedCancel(){
-	window.location.replace("./pages/employee.html");
+	window.location.replace("./employee.html");
 }
 
 function clickedLogout(){
 	sessionStorage.setItem("user", "");
-	window.location.replace("./index.html");
+	window.location.replace("../index.html");
 }

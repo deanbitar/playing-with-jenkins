@@ -9,14 +9,14 @@ if(user){
 	user = JSON.parse(user);
 	console.log(user);
 	if(user.role != 0){
-		window.location.replace("./index.html");
+		window.location.replace("../index.html");
 	}
 	else {
 		loadManager();
 	}
 }
 else{
-	window.location.replace("./index.html");
+	window.location.replace("../index.html");
 }
 
 let lblBarMain = document.getElementById("lblBarMain");
@@ -68,7 +68,7 @@ function populateReimbsTable(){
 		actBtn.classList.add("btn-primary");
 		actBtn.onclick = function() {
 			sessionStorage.setItem("reimbid", reimb.reimbId);
-			window.location.href = "./pages/reimbdetailmanager.html";
+			window.location.href = "./reimbdetailmanager.html";
 		};
 		actCol.appendChild(actBtn);
 		
@@ -142,5 +142,5 @@ function filterTable() {
 
 function clickedLogout(){
 	sessionStorage.setItem("user", "");
-	window.location.replace("./index.html");
+	window.location.replace("../index.html");
 }

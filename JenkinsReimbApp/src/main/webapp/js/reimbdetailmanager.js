@@ -13,7 +13,7 @@ function loadCredentials() {
 		user = JSON.parse(user);
 		console.log(user);
 		if (user.role != 0) {
-			window.location.replace("./index.html");
+			window.location.replace("../index.html");
 		}
 		else {
 			let lblBarMain = document.getElementById("lblBarMain");
@@ -21,7 +21,7 @@ function loadCredentials() {
 			loadReimb();
 		}
 	} else {
-		window.location.replace("./index.html");
+		window.location.replace("../index.html");
 	}
 }
 
@@ -35,7 +35,7 @@ function loadReimb() {
 	if (reimbId) {
 		loadReimbFromDB(reimbId);
 	} else {
-		window.location.replace("./pages/manager.html");
+		window.location.replace("./manager.html");
 	}
 }
 
@@ -109,7 +109,7 @@ function sendDecision(status) {
 			response = JSON.parse(response);
 			
 			if(response.status == "ok")
-				window.location.replace("./pages/manager.html");
+				window.location.replace("./manager.html");
 			else{
 				alert("Something went wrong");
 				btnApprove.disabled = false;
@@ -164,10 +164,10 @@ function getTime(time){
 
 function clickedBack() {
 	sessionStorage.setItem("reimbid", "");
-	window.location.replace("./pages/manager.html");
+	window.location.replace("./manager.html");
 }
 
 function clickedLogout() {
 	sessionStorage.setItem("user", "");
-	window.location.replace("./index.html");
+	window.location.replace("../index.html");
 }
