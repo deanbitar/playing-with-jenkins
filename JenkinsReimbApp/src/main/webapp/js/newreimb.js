@@ -9,11 +9,11 @@ if(user){
 	user = JSON.parse(user);
 	console.log(user);
 	if(user.role != 1){
-		window.location.replace("/JenkinsReimbApp/index.html");
+		window.location.replace("./index.html");
 	}
 }
 else{
-	window.location.replace("/JenkinsReimbApp/index.html");
+	window.location.replace("./index.html");
 }
 
 let lblBarMain = document.getElementById("lblBarMain");
@@ -41,7 +41,7 @@ function clickedSubmit(){
 				response = JSON.parse(response);
 				
 				if(response.status == "ok")
-					window.location.replace("/JenkinsReimbApp/pages/employee.html");
+					window.location.replace("./pages/employee.html");
 				else {
 					alert("Something went wrong");
 				}
@@ -62,16 +62,16 @@ function clickedSubmit(){
 	
 	let params = `authorid=${authorId}&amount=${amount}&type=${type}&desc=${desc}`;
 	
-	http.open("POST", "/JenkinsReimbApp/addNewReimb.do", true);
+	http.open("POST", "./addNewReimb.do", true);
 	http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	http.send(params);
 }
 
 function clickedCancel(){
-	window.location.replace("/JenkinsReimbApp/pages/employee.html");
+	window.location.replace("./pages/employee.html");
 }
 
 function clickedLogout(){
 	sessionStorage.setItem("user", "");
-	window.location.replace("/JenkinsReimbApp/index.html");
+	window.location.replace("./index.html");
 }

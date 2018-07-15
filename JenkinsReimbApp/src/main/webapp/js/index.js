@@ -26,10 +26,10 @@ function clickedLogin() {
 				sessionStorage.setItem("user", response);
 				if (user.role == 1) {// logged in as employee
 					window.location
-							.href = "/JenkinsReimbApp/pages/employee.html";
+							.href = "./pages/employee.html";
 				} else if (user.role == 0) { // logged in as manager
 					window.location
-					.href = "/JenkinsReimbApp/pages/manager.html";
+					.href = "./pages/manager.html";
 				} else {
 					alert("something went wrong");
 					btnLogin.disabled = false;
