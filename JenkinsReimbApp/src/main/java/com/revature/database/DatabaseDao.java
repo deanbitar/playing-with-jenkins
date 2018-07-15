@@ -14,9 +14,6 @@ import com.revature.objects.DetailStyleReimb;
 import com.revature.objects.ManagerStyleReimb;
 import com.revature.objects.Reimbursement;
 import com.revature.objects.User;
-import com.revature.servlet.MasterServlet;
-
-import oracle.net.aso.s;
 
 public class DatabaseDao implements Dao {
 	private static final String URL = "jdbc:oracle:thin:@wvudatabase.c4xtbqyyevqe.us-east-2.rds.amazonaws.com:1521:ORCL";

@@ -1,7 +1,6 @@
 package com.revature.servlet;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,8 +9,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.database.DatabaseService;
 import com.revature.objects.User;
-
-import oracle.net.aso.u;
 
 public class LoginController {
 
