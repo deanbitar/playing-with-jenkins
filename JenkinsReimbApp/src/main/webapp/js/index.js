@@ -42,7 +42,7 @@ function clickedLogin() {
 		}
 	};
 
-	http.open("POST", "/JenkinsReimbApp/login.do", true);
+	http.open("POST", "./login.do", true);
 	http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	let params = `username=${username}&password=${password}`;
 	console.log(params);
