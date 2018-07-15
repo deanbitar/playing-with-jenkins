@@ -13,7 +13,7 @@ function loadCredentials() {
 		user = JSON.parse(user);
 		console.log(user);
 		if (user.role != 0) {
-			window.location.replace("/ReimbursementApp/index.html");
+			window.location.replace("/JenkinsReimbApp/index.html");
 		}
 		else {
 			let lblBarMain = document.getElementById("lblBarMain");
@@ -21,7 +21,7 @@ function loadCredentials() {
 			loadReimb();
 		}
 	} else {
-		window.location.replace("/ReimbursementApp/index.html");
+		window.location.replace("/JenkinsReimbApp/index.html");
 	}
 }
 
@@ -35,7 +35,7 @@ function loadReimb() {
 	if (reimbId) {
 		loadReimbFromDB(reimbId);
 	} else {
-		window.location.replace("/ReimbursementApp/pages/manager.html");
+		window.location.replace("/JenkinsReimbApp/pages/manager.html");
 	}
 }
 
@@ -52,7 +52,7 @@ function loadReimbFromDB(reimbId) {
 		}
 	};
 	
-	http.open("POST", "/ReimbursementApp/getdetailreimbbyid.do", true);
+	http.open("POST", "/JenkinsReimbApp/getdetailreimbbyid.do", true);
 	http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	let params = `reimbid=${reimbId}`;
 	http.send(params);
@@ -109,7 +109,7 @@ function sendDecision(status) {
 			response = JSON.parse(response);
 			
 			if(response.status == "ok")
-				window.location.replace("/ReimbursementApp/pages/manager.html");
+				window.location.replace("/JenkinsReimbApp/pages/manager.html");
 			else{
 				alert("Something went wrong");
 				btnApprove.disabled = false;
@@ -118,7 +118,7 @@ function sendDecision(status) {
 		}
 	}
 	
-	http.open("POST", "/ReimbursementApp/giveverdict.do", true);
+	http.open("POST", "/JenkinsReimbApp/giveverdict.do", true);
 	http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	let params = `resolver=${user.id}&reimbid=${reimb.id}&status=${status}`;
 	http.send(params);
@@ -164,10 +164,10 @@ function getTime(time){
 
 function clickedBack() {
 	sessionStorage.setItem("reimbid", "");
-	window.location.replace("/ReimbursementApp/pages/manager.html");
+	window.location.replace("/JenkinsReimbApp/pages/manager.html");
 }
 
 function clickedLogout() {
 	sessionStorage.setItem("user", "");
-	window.location.replace("/ReimbursementApp/index.html");
+	window.location.replace("/JenkinsReimbApp/index.html");
 }

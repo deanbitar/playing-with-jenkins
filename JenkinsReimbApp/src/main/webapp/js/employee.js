@@ -9,14 +9,14 @@ if(user){
 	user = JSON.parse(user);
 	console.log(user);
 	if(user.role != 1){
-		window.location.replace("/ReimbursementApp/index.html");
+		window.location.replace("/JenkinsReimbApp/index.html");
 	}
 	else {
 		loadEmployee();
 	}
 }
 else{
-	window.location.replace("/ReimbursementApp/index.html");
+	window.location.replace("/JenkinsReimbApp/index.html");
 }
 
 let lblBarMain = document.getElementById("lblBarMain");
@@ -42,7 +42,7 @@ function loadEmployee(){
 		}
 	};
 	
-	http.open("POST","/ReimbursementApp/getAuthorReimbs.do", true);
+	http.open("POST","/JenkinsReimbApp/getAuthorReimbs.do", true);
 	http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	http.send(`authorid=${user.id}`);
 }
@@ -71,7 +71,7 @@ function populateReimbsTable(){
 		actBtn.classList.add("btn-primary");
 		actBtn.onclick = function() {
 			sessionStorage.setItem("reimbid", reimb.id);
-			window.location.href = "/ReimbursementApp/pages/reimbdetailemployee.html";
+			window.location.href = "/JenkinsReimbApp/pages/reimbdetailemployee.html";
 		};
 		actCol.appendChild(actBtn);
 		
@@ -87,7 +87,7 @@ function populateReimbsTable(){
 }
 
 function clickedNewReimb(){
-	window.location.href = "/ReimbursementApp/pages/newreimb.html";
+	window.location.href = "/JenkinsReimbApp/pages/newreimb.html";
 }
 
 function getStatus(status){
@@ -127,5 +127,5 @@ function getTime(time){
 
 function clickedLogout(){
 	sessionStorage.setItem("user", "");
-	window.location.replace("/ReimbursementApp/index.html");
+	window.location.replace("/JenkinsReimbApp/index.html");
 }

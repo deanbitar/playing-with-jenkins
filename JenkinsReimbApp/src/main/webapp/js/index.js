@@ -26,10 +26,10 @@ function clickedLogin() {
 				sessionStorage.setItem("user", response);
 				if (user.role == 1) {// logged in as employee
 					window.location
-							.href = "/ReimbursementApp/pages/employee.html";
+							.href = "/JenkinsReimbApp/pages/employee.html";
 				} else if (user.role == 0) { // logged in as manager
 					window.location
-					.href = "/ReimbursementApp/pages/manager.html";
+					.href = "/JenkinsReimbApp/pages/manager.html";
 				} else {
 					alert("something went wrong");
 					btnLogin.disabled = false;
@@ -42,7 +42,7 @@ function clickedLogin() {
 		}
 	};
 
-	http.open("POST", "/ReimbursementApp/login.do", true);
+	http.open("POST", "/JenkinsReimbApp/login.do", true);
 	http.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	let params = `username=${username}&password=${password}`;
 	console.log(params);

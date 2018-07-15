@@ -9,14 +9,14 @@ if(user){
 	user = JSON.parse(user);
 	console.log(user);
 	if(user.role != 0){
-		window.location.replace("/ReimbursementApp/index.html");
+		window.location.replace("/JenkinsReimbApp/index.html");
 	}
 	else {
 		loadManager();
 	}
 }
 else{
-	window.location.replace("/ReimbursementApp/index.html");
+	window.location.replace("/JenkinsReimbApp/index.html");
 }
 
 let lblBarMain = document.getElementById("lblBarMain");
@@ -38,7 +38,7 @@ function loadManager(){
 		}
 	};
 	
-	http.open("POST", "/ReimbursementApp/getAllReimbs.do", true);
+	http.open("POST", "/JenkinsReimbApp/getAllReimbs.do", true);
 	http.send();
 }
 
@@ -68,7 +68,7 @@ function populateReimbsTable(){
 		actBtn.classList.add("btn-primary");
 		actBtn.onclick = function() {
 			sessionStorage.setItem("reimbid", reimb.reimbId);
-			window.location.href = "/ReimbursementApp/pages/reimbdetailmanager.html";
+			window.location.href = "/JenkinsReimbApp/pages/reimbdetailmanager.html";
 		};
 		actCol.appendChild(actBtn);
 		
@@ -142,5 +142,5 @@ function filterTable() {
 
 function clickedLogout(){
 	sessionStorage.setItem("user", "");
-	window.location.replace("/ReimbursementApp/index.html");
+	window.location.replace("/JenkinsReimbApp/index.html");
 }

@@ -39,7 +39,7 @@ function clickedSubmit() {
 			}
 		};
 
-		http.open("POST", "/ReimbursementApp/createaccount.do");
+		http.open("POST", "/JenkinsReimbApp/createaccount.do");
 		http.setRequestHeader('Content-type',
 				'application/x-www-form-urlencoded');
 		let params = `fname=${txtFName}&lname=${txtLName}&email=${txtEmail}&username=${txtUser}&password=${txtPass}`;
