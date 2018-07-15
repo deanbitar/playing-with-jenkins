@@ -9,14 +9,14 @@ if(user){
 	user = JSON.parse(user);
 	console.log(user);
 	if(user.role != 1){
-		window.location.replace("./index.html");
+		window.location.replace("../index.html");
 	}
 	else {
 		loadEmployee();
 	}
 }
 else{
-	window.location.replace("./index.html");
+	window.location.replace("../index.html");
 }
 
 let lblBarMain = document.getElementById("lblBarMain");
@@ -71,7 +71,7 @@ function populateReimbsTable(){
 		actBtn.classList.add("btn-primary");
 		actBtn.onclick = function() {
 			sessionStorage.setItem("reimbid", reimb.id);
-			window.location.href = "./pages/reimbdetailemployee.html";
+			window.location.href = "./reimbdetailemployee.html";
 		};
 		actCol.appendChild(actBtn);
 		
@@ -87,7 +87,7 @@ function populateReimbsTable(){
 }
 
 function clickedNewReimb(){
-	window.location.href = "./pages/newreimb.html";
+	window.location.href = "./newreimb.html";
 }
 
 function getStatus(status){
@@ -127,5 +127,5 @@ function getTime(time){
 
 function clickedLogout(){
 	sessionStorage.setItem("user", "");
-	window.location.replace("./index.html");
+	window.location.replace("../index.html");
 }
